@@ -1,4 +1,4 @@
-// const playDb = require('/models/playstation');
+const playDb = require('../../models/playstation');
 
 function getAll(req, res, next) {
   playDb.getAllPlayGames()

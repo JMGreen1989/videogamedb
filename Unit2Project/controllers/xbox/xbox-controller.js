@@ -1,4 +1,4 @@
-const boxDb = require('/models/xbox');
+const boxDb = require('../../models/xbox');
 
 function getAllX(req, res, next) {
   boxDb.getAllBoxGames()
