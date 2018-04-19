@@ -1,8 +1,8 @@
 
-Project 2 Schedule
+## Project 2 Schedule
 This schedule will be used to keep track of your progress throughout the week and align with our expectations.
 
-Day	Deliverable
+## Day	Deliverable
 Day 1: Tue	Wireframes and Priority Matrix
 Day 2: Wed	Project Approval / Pseudocode / actual code
 Day 3: Thur	Basic Clickable Model
@@ -15,7 +15,7 @@ Video Game Release Date Schedule
 
 This app will pull data from a game api, where it's narrowed down to 2018 release dates for both Xbox and Playstation platforms. You can look to see which games are coming out, and add a game or two if you think it's missing one.
 
-Wireframes
+## Wireframes
 https://res.cloudinary.com/dc6dj6gen/image/upload/v1524081330/IMG_3623.jpg
 
 https://res.cloudinary.com/dc6dj6gen/image/upload/v1522274213/IMG_3289.jpg
@@ -25,21 +25,23 @@ https://res.cloudinary.com/dc6dj6gen/image/upload/v1524081330/IMG_3625.jpg
 
 https://res.cloudinary.com/dc6dj6gen/image/upload/v1524081330/IMG_3626.jpg
 
-Game Components
+## Game Components
 Landing Page
 The landing page consists of a user log in page
 
-Rest of the App
+## Rest of the App
 A page where the user picks which platform they want to look at, Playstation or Xbox, then it will direct you to a page of that platform's release dates.
 
-MVP
-Release date API
-User log in
-Xbox and PS game pages
-Add/delete game
-POST MVP
-Comment boxes
-Functional Components
+## MVP
+- Release date API
+- User log in
+- Xbox and PS game pages
+- Add/delete game
+
+## POST MVP
+- Comment boxes
+
+## Functional Components
 Based on the initial logic defined in the previous game phases section try and breakdown the logic further into functional components, and by that we mean functions. Does your logic indicate that code could be encapsulated for the purpose of reusablility. Once a function has been defined it can then be incorporated into a class as a method.
 
 Time frames are also key in the development cycle. You have limited time to code all phases of the game. Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted.
