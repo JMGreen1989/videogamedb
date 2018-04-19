@@ -16,3 +16,5 @@ function sendThisError(err, req, res, next) {
 
 xboxRouter.route('/')
 .get(xboxController.getAllX, xboxViewController.lookAtBox, sendThisError)
+
+module.exports = xboxRouter;

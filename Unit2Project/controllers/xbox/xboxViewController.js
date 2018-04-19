@@ -1,25 +1,29 @@
 function lookAtBox(req, res) {
-  xbox = res.locals.xbox
-  res.render('xboxviews/index');
+  res.render('xboxviews/index', {
+    xbox: res.locals.xbox
+  })
 }
 
 function lookAtOneX(req, res) {
-  xbox = res.locals.xbox
-  res.render('xboxviews/show');
+  res.render('xboxviews/show', {
+    xbox: res.locals.xbox
+  })
 }
 
 function makeNewXGame(req, res) {
-  xbox = res.locals.newGame
-  res.redirect('xboxviews/new');
+  xbox = res.locals.newPlay
+  res.redirect(`xbox/new/${game.id}`)
 }
 
 function editXGame(req, res) {
   xbox = res.locals.xbox
-  res.render('xboxviews/edit');
+  res.render(`xboxviews/edit`, {
+    xbox: res.locals.xbox
+  })
 }
 
 function deleteGameX(req, res) {
-  res.redirect('xboxviews/index');
+  res.redirect(`xboxviews/index`);
 }
 
 module.exports = {

@@ -15,4 +15,7 @@ function sendThisError(err, req, res, next) {
 }
 
 playRouter.route('/')
-.get(playController.getAll, playViewController.lookAtPlay, sendThisError)
+.get(playController.getAll, playViewController.lookAtPlay, sendThisError);
+
+
+module.exports = playRouter;
