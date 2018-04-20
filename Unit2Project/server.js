@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 
 //requiring the routers, and the paths that lead to them
 const playStationRouter = require('./routes/playStationRouter');
-// const xboxRouter = require('./routes/xboxRouter');
+const xboxRouter = require('./routes/xboxRouter');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/playstation', playStationRouter);
-// app.use('/xbox', xboxRouter);
+app.use('/xbox', xboxRouter);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}, in ${app.get('env')}!`);

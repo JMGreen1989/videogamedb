@@ -2,7 +2,7 @@
 const xboxRouter = require('express').Router();
 //defining the path to the xbox controller
 const xboxController = require('../controllers/xbox/xbox-controller');
-//defining the path to the PS view controller
+//defining the path to the XB view controller
 const xboxViewController = require('../controllers/xbox/xboxViewController');
 
 
@@ -14,7 +14,20 @@ function sendThisError(err, req, res, next) {
   })
 }
 
-xboxRouter.route('/')
-.get(xboxController.getAllX, xboxViewController.lookAtBox, sendThisError)
+//showing one game when you click
+xboxRouter.route('/show')
+.get(xboxController.getOneX, xboxViewController.lookAtXGames, sendThisError);
+
+//adding a game when you click add
+xboxRouter.route('/:id')
+.post(xboxController.createXGame, xboxViewController.makeNewXGame, sendThisError);
+
+//editing an existing game
+xboxRouter.route('/edit')
+.put(xboxController.editXGame, xboxViewController.editXGame, sendThisError);
+
+//delete a game
+xboxRouter.route('/show')
+.delete(xboxController.destroyXGame, xboxViewController.deleteXGame);
 
 module.exports = xboxRouter;

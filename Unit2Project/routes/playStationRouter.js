@@ -14,8 +14,22 @@ function sendThisError(err, req, res, next) {
   })
 }
 
-playRouter.route('/')
-.get(playController.getAll, playViewController.lookAtPlay, sendThisError);
+
+//showing one game when you click
+playRouter.route('/show')
+.get(playController.getOne, playViewController.lookAtPGames, sendThisError);
+
+//adding a game when you click add
+playRouter.route('/:id')
+.post(playController.createPlayGame, playViewController.makeNewPGame, sendThisError);
+
+//editing an existing game
+playRouter.route('/edit')
+.put(playController.editPlayGame, playViewController.editPsGame, sendThisError);
+
+//delete a game
+playRouter.route('/show')
+.delete(playController.destroyPlayGame, playViewController.deleteGame,);
 
 
 module.exports = playRouter;

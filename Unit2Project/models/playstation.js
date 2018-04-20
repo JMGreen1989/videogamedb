@@ -1,16 +1,33 @@
 const db = require ('../config/connection');
 
-function getEveryPGame() {
+function getThePGame() {
+    return db.any(`
+        SELECT * FROM playstation
+      `)
+}
+
+function makePGame(){
+
+}
+
+function editPGame(){
 
 }
 
 
-function getOnePGame() {
+
+function updatePGame() {
+
+}
+
+function deletePGame(id){
 
 }
 
 module.exports = {
-  getEveryPGame,
-  getOnePGame
+  getThePGame,
+  makePGame,
+  editPGame,
+  updatePGame
 }
 
