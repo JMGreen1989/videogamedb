@@ -33,13 +33,14 @@ The landing page consists of a user log in page
 A page where the user picks which platform they want to look at, Playstation or Xbox, then it will direct you to a page of that platform's release dates.
 
 ## MVP
-- Release date API
+- Release dates of games from both platforms 
 - User log in
 - Xbox and PS game pages
 - Add/delete game
 
 ## POST MVP
 - Comment boxes
+- Release date API
 
 ## Functional Components
 Based on the initial logic defined in the previous game phases section try and breakdown the logic further into functional components, and by that we mean functions. Does your logic indicate that code could be encapsulated for the purpose of reusablility. Once a function has been defined it can then be incorporated into a class as a method.
