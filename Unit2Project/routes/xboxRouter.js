@@ -14,17 +14,21 @@ function sendThisError(err, req, res, next) {
   })
 }
 
-//showing one game when you click
+//showing the games when you click
 xboxRouter.route('/show')
-.get(xboxController.getOneX, xboxViewController.lookAtXGames, sendThisError);
+.get(xboxController.XBlayout, xboxViewController.lookAtXGames, sendThisError);
+
+//show one game when you click on it
+xboxRouter.route('/game')
+.get(xboxController.getOneX, xboxViewController.showOneXGame, sendThisError);
 
 //adding a game when you click add
-xboxRouter.route('/:id')
-.post(xboxController.createXGame, xboxViewController.makeNewXGame, sendThisError);
+xboxRouter.route('/new')
+.get(xboxController.createXGame, xboxViewController.makeNewXGame, sendThisError);
 
 //editing an existing game
-xboxRouter.route('/edit')
-.put(xboxController.editXGame, xboxViewController.editXGame, sendThisError);
+xboxRouter.route('/:id/edit')
+.post(xboxController.updateXBGame, xboxViewController.updateTheXGame, sendThisError);
 
 //delete a game
 xboxRouter.route('/show')

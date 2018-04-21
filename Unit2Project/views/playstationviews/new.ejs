@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" text="text/html" href="style.css">
-    <meta charset="UTF-8">
-    <title>add a new game!</title>
-  </head>
-  <body>
+<% include ../../partials/boilerplate %>
 
-  </body>
-</html>
+
+<div class="form-page">
+<div class="add game">
+
+<form action="/playstation" method="POST">
+<input type="text" name="name" placeholder="Name" /><br>
+<input type="text" name="release" placeholder="Release Date" /><br>
+<input type="text" name="developer" placeholder="Game Developer" /><br>
+<input type="text" name="image" placeholder="Image URL" /><br>
+<input type="text" value="Add Game" />
+
+</form>
+</div>
+</div>
+<a href="/playstation/show">Back to Games</a>

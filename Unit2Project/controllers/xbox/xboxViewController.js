@@ -6,8 +6,16 @@ function lookAtXGames(req, res) {
   })
 }
 
+//showing one game when you click on it
+function showOneXGame(req, res) {
+   xbox = res.locals.xbox
+  res.render(`xboxviews/game`, {
+    xbox: res.locals.xbox
+  })
+}
+
 //making a function for when you want to input a game
-function makeNewXGame(req, res) {
+function makeNewXGame (req, res) {
    xbox = res.locals.xbox
   res.render(`xboxviews/new`, {
     xbox: res.locals.xbox
@@ -15,7 +23,7 @@ function makeNewXGame(req, res) {
 }
 
 //function for editing an exiting game
-function editXGame(req, res) {
+function updateTheXGame(req, res) {
   xbox = res.locals.xbox
   res.render(`xbox/edit`, {
     xbox: res.locals.xbox
@@ -29,7 +37,8 @@ function deleteXGame(req, res) {
 
 module.exports = {
   lookAtXGames,
+  showOneXGame,
   makeNewXGame,
-  editXGame,
+  updateTheXGame,
   deleteXGame
 }

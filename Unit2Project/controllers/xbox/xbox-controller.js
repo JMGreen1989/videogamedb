@@ -1,4 +1,17 @@
 const boxDb = require('../../models/xbox');
+// const fetch = require('node-fetch');
+
+function XBlayout(req,res,next) {
+  console.log('inside ps layout');
+    boxDb.getAllXGames()
+    .then(data => {
+      res.locals.xbox = data;
+      next();
+    })
+    .catch(err=> {
+      next(err);
+    })
+}
 
 
 function getOneX(req, res, next) {
@@ -13,9 +26,9 @@ function getOneX(req, res, next) {
 }
 
 function createXGame(req, res, next) {
-  playDb.makeXGame(req.params.id)
+  boxDb.makeXGame(req.params.id)
   .then(data => {
-    res.locals.playstation = data;
+    res.locals.xbox = data;
     next();
   })
   .catch(err => {
@@ -23,21 +36,10 @@ function createXGame(req, res, next) {
   })
 }
 
-//edit the details of a PS game you just added
-function editXGame(req, res, next) {
-  playDb.editXGame(req.params.id)
-  .then(data => {
-    res.locals.playstation = data;
-    next();
-  })
-  .catch(err => {
-    next(err);
-  })
-}
 
 //update an already existing PS game on the list
 function updateXBGame(req, res, next) {
-  playDb.updateXGame(req.params.id)
+  boxDb.updateXGame(req.params.id)
   .then(data => {
     res.redirect(`xboxview/edit`)
   })
@@ -48,7 +50,7 @@ function updateXBGame(req, res, next) {
 
 //get rid of a game if you don't like it!
 function destroyXGame(req, res, next) {
-  playDb.deleteXGame(req.params.id)
+  boxDb.deleteXGame(req.params.id)
   .then(() => {
     res.redirect('xboxview/index');
   })
@@ -60,9 +62,9 @@ function destroyXGame(req, res, next) {
 }
 
 module.exports = {
+  XBlayout,
   getOneX,
   createXGame,
-  editXGame,
   updateXBGame,
   destroyXGame
 }

@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" text="text/html" href="styles.css">
-    <meta charset="UTF-8">
-    <title>title</title>
-  </head>
-  <body>
-  <p>hi</p>
-  </body>
-</html>
+<% include ../../partials/boilerplate %>
+
+<% xbox.forEach((xbox) => { %>
+<div class="xbox">
+  <a href="/xbox/<%=xbox.id%>"><h1><%=xbox.name%></h1></a>
+</div>
+<% }) %>
+
+<a href="xbox/new">Make A Game!</a>

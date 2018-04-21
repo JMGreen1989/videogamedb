@@ -8,7 +8,14 @@
 
 //making a function for looking the PS games
 function lookAtPGames(req, res) {
-  res.render('playstationviews/show', {
+  console.log('inside looking at PS games')
+   res.render('playstationviews/show', {
+        playstation: res.locals.playstation
+    })
+}
+function showPSGame(req, res) {
+  playstation = res.locals.playstation
+  res.render('playstationviews/game', {
     playstation: res.locals.playstation
   })
 }
@@ -16,8 +23,7 @@ function lookAtPGames(req, res) {
 //making a function for when you want to input a game
 function makeNewPGame(req, res) {
   playstation = res.locals.playstation
-  res.render(`playstationviews/new`, {
-    playstation: res.locals.playstation
+  res.render('playstationviews/new', {
   })
 }
 
@@ -35,8 +41,8 @@ function deleteGame(req, res) {
 }
 
 module.exports = {
-  // lookAtPlay,
   lookAtPGames,
+  showPSGame,
   makeNewPGame,
   editPsGame,
   deleteGame

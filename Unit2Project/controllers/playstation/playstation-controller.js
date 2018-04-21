@@ -1,9 +1,22 @@
 const playDb = require('../../models/playstation');
+const fetch = require('node-fetch');
 
+
+function PSlayout(req,res,next) {
+  console.log('inside ps layout');
+    playDb.getAllPGames()
+    .then(data => {
+      res.locals.playstation = data;
+      next();
+    })
+    .catch(err=> {
+      next(err);
+    })
+}
 
 //get the PS games to show details when you click on it
 function getOne(req, res, next) {
-  playDb.getThePGame(req.params.id)
+  playDb.getOnePGame(req.params.id)
   .then(data => {
     res.locals.playstation = data;
     next();
@@ -62,6 +75,7 @@ function destroyPlayGame(req, res, next) {
 }
 
 module.exports = {
+  PSlayout,
   getOne,
   createPlayGame,
   editPlayGame,
