@@ -16,6 +16,10 @@ h1{
   text-align: center;
 }
 
+p{
+  text-align: center;
+  word-spacing: 2px;
+}
 
 a{
   margin: 0;
