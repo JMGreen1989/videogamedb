@@ -1,28 +1,25 @@
-showUserLogin(req, res) {
+module.exports = {
+
+userLogin(req, res) {
   res.render('viewauth/userlogin');
 
-}
+},
 
 userRegisterForm(req, res) {
   res.render('viewauth/register');
-}
+},
 
-createTheUser(req, res) {
-  res.redirect()
-}
+handleCreateUser(req, res) {
+  res.redirect('/playstationviews/show')
+},
 
 userLogout(req, res){
   res.redirect('/');
-}
+},
 
 userDelete(req, res){
-  res.redirect('/')
+  res.redirect('/playstationviews/show')
 
+},
 
-module.exports={
-  showUserLogin,
-  userRegisterForm,
-  createTheUser,
-  userLogout,
-  userDelete
-}
+};

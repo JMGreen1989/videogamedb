@@ -1,4 +1,4 @@
-
+\c video_games_db
 
 -- removing any records if they already exist
 DROP TABLE IF EXISTS playstation CASCADE;

@@ -4,7 +4,7 @@ const fetch    = require('node-fetch');
 const User     = require('../model/theuser');
 
 module.exports = {
-  async login(req, res next) {
+  async login(req, res, next) {
     try {
       const { username, password} = req.body
       const user = await theuser.oneUser(username);

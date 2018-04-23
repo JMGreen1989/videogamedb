@@ -2,7 +2,7 @@ const playDb = require('../../models/playstation');
 
 //laying out all the PS games available on the table
 function PSlayout(req, res, next) {
-  console.log('inside ps layout')
+  console.log(res)
       playDb.getAllPGames()
     .then(data => {
       res.locals.playstation = data;

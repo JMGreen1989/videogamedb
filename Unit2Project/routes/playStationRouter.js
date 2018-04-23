@@ -9,7 +9,7 @@ const playViewController = require('../controllers/playstation/playstationViewCo
 //setting up an error for when something goes wrong
 function sendThisError(err, req, res, next) {
   res.status(500).json({
-    status: 'an error has occured',
+    status: 'an error has occurred',
     message: err.message
   })
 }
@@ -30,14 +30,14 @@ playRouter.route('/game/:id')
 playRouter.route('/new')
 .get(playViewController.makeNewPGame, sendThisError);
 
-
+playRouter.route('/:id')
+.delete(playController.destroyPlayGame, playViewController.deleteGame, sendThisError)
+.get(playController.PSlayout, playViewController.lookAtPGames, sendThisError)
+.put(playController.updatePlayGame, playViewController.editPsGame, sendThisError);
 //editing an existing game
 playRouter.route('/:id/edit')
 .get(playController.updatePlayGame, playViewController.editPsGame, sendThisError);
 
-playRouter.route('/:id')
-.delete(playController.destroyPlayGame, playViewController.deleteGame, sendThisError)
-.get(playController.PSlayout, playViewController.lookAtPGames, sendThisError);
 
 
 module.exports = playRouter;

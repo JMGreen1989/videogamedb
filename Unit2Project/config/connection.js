@@ -2,7 +2,6 @@
 //I double checked the syntax with harry potter CRUD
 const pgp = require('pg-promise')();
 const config = require('./dbConfig');
-
-const db = pgp(process.env.DATABASE_url || config);
+const db = pgp(config);
 
 module.exports = db;

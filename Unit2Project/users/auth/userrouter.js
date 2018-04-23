@@ -3,10 +3,14 @@ const userService   = require('./userservice');
 const usersViewController  = require('../usersViewController');
 
 userRouter.route('/login')
-.get(usersViewController.loginPage)
+.get(usersViewController.userLogin)
 .post(userService.login, usersViewController.handleCreateUser);
 
-userRouter.get('/logout', userservice.logout, usersViewController.handleLogout);
+userRouter.get('/logout', userService.logout, usersViewController.userLogout);
+
+userRouter.route('/register')
+.get(usersViewController.userRegisterForm);
+
 
 userRouter.use((err, req, res, next) => {
   console.log(err);

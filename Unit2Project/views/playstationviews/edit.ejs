@@ -8,16 +8,14 @@
 </head>
 <body>
   <form action="/playstation/<%=playstation.id%>?_method=PUT" method="POST">
+  <input name="id" type="number" value="<%=playstation.id%>" style="display:none"/>
+
   <input type="text" name="name" value="<%=playstation.name%>" /><br>
   <input type="text" name="release" value="<%=playstation.release%>" /><br>
   <input type="text" name="developer" value="<%=playstation.developer%>" /><br>
   <input type="text" name="image" value="<%=playstation.image%>" /><br>
 
-  <select name="id">
-    <% playstation.forEach((playstation) => { %>
-      <option value="<%=playstation.id%>"><%=game.name%></option>
-    <% }) %>
-  </select> <br>
+<br>
   <input type="submit" value="Edit Game" />
 </form>
 <a href="/playstation/show"> Back to Game List </a>

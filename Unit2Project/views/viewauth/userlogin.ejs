@@ -7,17 +7,22 @@
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
-
-<form method="POST" action="/auth/login">
-<div class="field">
-    <p>
-      <input class="input" type="text" placeholder="username" name="username">
-
+<form method="POST" action="/viewauth/userlogin">
+  <div class="usernamefield">
+    <p class="contol has-icons-left has-icons-right">
+    <input class="input" type="text" placeholder="Username" name="username">
     </p>
-</div>
-<div class="field">
-
-
-</div>
+  </div>
+  <div class="passwordfield">
+    <p>
+    <input class="input" type="password" placeholder="Password" name="password">
+    </p>
+  </div>
+  <div class="loggedinfield">
+    <p class="control">
+      <input type="submit" value="Log in!" class="button"/>
+    </p>
+  </div>
+</form>
 </body>
 </html>

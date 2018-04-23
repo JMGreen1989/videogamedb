@@ -1,8 +1,9 @@
 const db = require ('../config/connection');
 
 function getAllPGames() {
-  return db.many (`
-  SELECT * FROM playstation`);
+  return db.many(`
+  SELECT * FROM playstation
+  `);
 }
 
 

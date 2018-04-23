@@ -7,8 +7,8 @@ const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
 
-const theuserService = ('./users/auth/userservice');
-const theuserRouter = ('./users/auth/userrouter');
+const userService = require ('./users/auth/userservice');
+const userRouter =  require ('./users/auth/userrouter');
 
 
 //opening the port to 3000
@@ -24,6 +24,8 @@ app.set('secretServer', process.env.SECRET_SERVER);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+app.use('/auth', userRouter);
 
 app.use(logger('dev'));
 
