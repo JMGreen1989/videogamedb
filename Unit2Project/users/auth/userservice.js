@@ -7,7 +7,7 @@ module.exports = {
   async login(req, res next) {
     try {
       const { username, password} = req.body
-      const user = await theuser.findOne(username);
+      const user = await theuser.oneUser(username);
       const areTheyValid = await bycrpt.compare(password, user.password_digest);
 
       if(!areTheyValid) {
