@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+  <title>PS4 Titles</title>
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
  <% playstation.forEach((playstation) => { %>
 <div class="playstation">
-  <a href="/playstation/<%=playstation.id%>"><h1><%=playstation.name%></h1></a>
+  <a href="/playstation/game/<%=playstation.id%>"><h1><%=playstation.name%></h1></a>
 </div>
 </body>
 <% }) %>
-<a href="/playstation/new">Make A Game!</a>
+<a href="/playstation/new">Add A Game!</a>
 </html>
 

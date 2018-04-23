@@ -1,43 +1,43 @@
 const db = require ('../config/connection');
 
 function getAllXGames() {
-  const xbQuery = db.manyOrNone(`
+  return db.many (`
     SELECT * FROM xbox`);
-  return xbQuery;
+
 }
 
 
-function getOneXGame() {
-  const xbQuery = db.one(`
+function getOneXGame(id) {
+  return db.one (`
    SELECT * FROM xbox
    WHERE id = $1`, id);
-   return xbQuery;
+
 }
 
-function makeXGame(){
-    const xbQuery = db.one (`
+function makeXGame(xbox){
+    return db.one (`
     INSERT INTO xbox
-    (name, release, developer, image, game_id)
-    VALUES($/name/, $/release/, $/developer/, $/image/, $/game_id)
+    (name, release, developer, image)
+    VALUES ($/name/, $/release/, $/developer/, $/image/)
     RETURNING *`, xbox);
-    return xbQuery;
+
 }
 
 function updateXGame(xbox) {
-    const xbQuery = db.one(`
+    return db.one (`
     UPDATE xbox
     SET name = $/name/, release = $/release/,
-    developer = $/developer/, image = $/image/, game_id = $/game_id
+    developer = $/developer/, image = $/image/, id = $/id/
     WHERE id = $/id/
     RETURNING *`, xbox);
-    return xbQuery;
+
 }
 
 function deleteXGame(id){
-    const xbQuery = db.none(`
+    return db.none (`
       DELETE FROM xbox
       WHERE id = $1`, id);
-      return xbQuery;
+
 }
 module.exports = {
   getAllXGames,

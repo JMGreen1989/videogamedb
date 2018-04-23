@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+  <div class="playstation">
+  <h1><%=playstation.name%><%=playstation.developer%></h1>
+  <img src="<%=playstation.image%>" alt="<%=playstation.name%>" />
+  <br>
+   <form action="/playstation/<%=playstation.id%>/edit" class='put' method="GET">
+  <input type="submit" class="editlink" value="Edit">
+  </form>
+  <br>
+  <form action="/playstation/<%=playstation.id%>?_method=DELETE" class='delete' method="POST">
+  <input type="submit" class="dellink" value="Delete">
+  </form>
+</div>
+</body>
+<a href="/playstation/show">Back to Games</a>
+</html>

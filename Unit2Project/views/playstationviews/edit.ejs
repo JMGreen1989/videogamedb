@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Edit this game</title>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+  <form action="/playstation/<%=playstation.id%>?_method=PUT" method="POST">
+  <input type="text" name="name" value="<%=playstation.name%>" /><br>
+  <input type="text" name="release" value="<%=playstation.release%>" /><br>
+  <input type="text" name="developer" value="<%=playstation.developer%>" /><br>
+  <input type="text" name="image" value="<%=playstation.image%>" /><br>
+
+  <select name="id">
+    <% playstation.forEach((playstation) => { %>
+      <option value="<%=playstation.id%>"><%=game.name%></option>
+    <% }) %>
+  </select> <br>
+  <input type="submit" value="Edit Game" />
+</form>
+<a href="/playstation/show"> Back to Game List </a>
+</body>
+</html>

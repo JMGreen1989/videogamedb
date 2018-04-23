@@ -7,6 +7,10 @@ const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
 
+const theuserService = ('./users/auth/userservice');
+const theuserRouter = ('./users/auth/userrouter');
+
+
 //opening the port to 3000
 //it will scan the environment for a port named 3000
 const PORT = process.env.PORT || 3000;
@@ -15,10 +19,20 @@ const PORT = process.env.PORT || 3000;
 const playStationRouter = require('./routes/playStationRouter');
 const xboxRouter = require('./routes/xboxRouter');
 
+//from the node sessions lessons.
+app.set('secretServer', process.env.SECRET_SERVER);
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(logger('dev'));
+
+// app.use(session({
+//   secret:            app.get('secretServer'),
+//   resave:            false,
+//   saveUninitialized: false,
+// }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

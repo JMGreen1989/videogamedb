@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS xbox CASCADE;
 
 -- creating tables
 CREATE TABLE playstation (
-game_id     SERIAL PRIMARY KEY NOT NULL,
+id     SERIAL PRIMARY KEY NOT NULL,
 name        VARCHAR(64),
 release     VARCHAR(64),
 developer   VARCHAR(64),
@@ -14,7 +14,7 @@ image       VARCHAR(128)
 );
 
 CREATE TABLE xbox (
-game_id     SERIAL PRIMARY KEY NOT NULL,
+id     SERIAL PRIMARY KEY NOT NULL,
 name        VARCHAR(64),
 release     VARCHAR(64),
 developer   VARCHAR(64),

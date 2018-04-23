@@ -14,15 +14,27 @@ h1{
   font-family: 'Yanone Kaffeesatz', sans-serif;
   margin: 0;
   text-align: center;
+  font-size: 50px;
 }
 
 p{
   text-align: center;
   word-spacing: 2px;
+  padding: 25px;
+  font-size: 30px;
+
 }
 
 a{
   margin: 0;
   text-align: center;
-  text-decoration-color: orange;
+  font-size: 30px;
+  padding: 35px;
+
 }
+
+.links{
+  color: #FFAB4A
+  border: 5px solid #6D6D6D;
+}
+

@@ -13,6 +13,7 @@ function lookAtPGames(req, res) {
         playstation: res.locals.playstation
     })
 }
+//showing you a specific game when you click on it
 function showPSGame(req, res) {
   playstation = res.locals.playstation
   res.render('playstationviews/game', {
@@ -30,14 +31,14 @@ function makeNewPGame(req, res) {
 //function for editing an exiting game
 function editPsGame(req, res) {
   playstation = res.locals.playstation
-  res.render(`playstationviews/edit`, {
+  res.render('playstationviews/edit', {
     playstation: res.locals.playstation
   })
 }
 
 //function for deleting a game
 function deleteGame(req, res) {
-  res.redirect(`playstationviews/show`);
+  res.redirect('/show');
 }
 
 module.exports = {

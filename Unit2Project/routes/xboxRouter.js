@@ -16,22 +16,25 @@ function sendThisError(err, req, res, next) {
 
 //showing the games when you click
 xboxRouter.route('/show')
-.get(xboxController.XBlayout, xboxViewController.lookAtXGames, sendThisError);
+.get(xboxController.XBlayout, xboxViewController.lookAtXGames, sendThisError)
+.post(xboxController.createXGame, xboxController.XBlayout, xboxViewController.lookAtXGames);
 
 //show one game when you click on it
-xboxRouter.route('/game')
-.get(xboxController.getOneX, xboxViewController.showOneXGame, sendThisError);
+xboxRouter.route('/game/:id')
+.get(xboxController.getOneX, xboxViewController.showOneXGame, sendThisError)
+
 
 //adding a game when you click add
 xboxRouter.route('/new')
-.get(xboxController.createXGame, xboxViewController.makeNewXGame, sendThisError);
+.get(xboxViewController.makeNewXGame, sendThisError);
 
 //editing an existing game
-xboxRouter.route('/:id/edit')
+xboxRouter.route('/edit/:id')
 .post(xboxController.updateXBGame, xboxViewController.updateTheXGame, sendThisError);
 
 //delete a game
-xboxRouter.route('/show')
-.delete(xboxController.destroyXGame, xboxViewController.deleteXGame);
+xboxRouter.route('/:id')
+.delete(xboxController.destroyXGame, xboxViewController.deleteXGame, sendThisError)
+.get(xboxController.XBlayout, xboxViewController.lookAtXGames, sendThisError);
 
 module.exports = xboxRouter;

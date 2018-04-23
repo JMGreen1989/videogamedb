@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+  <div class="xbox">
+  <h1><%=xbox.name%><%=xbox.developer%></h1>
+  <img src="<%=xbox.image%>" alt="<%=xbox.name%>" />
+  <br>
+   <form action="/xbox/<%=xbox.id%>/edit" class='put' method="GET">
+  <input type="submit" class="editlink" value="Edit">
+  </form>
+  <br>
+  <form action="/xbox/<%=xbox.id%>?_method=DELETE" class='delete' method="POST">
+  <input type="submit" class="dellink" value="Delete">
+  </form>
+</div>
+</body>
+<a href="/xbox/show">Back to Games</a>
+</html>

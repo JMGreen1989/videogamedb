@@ -1,9 +1,17 @@
-<% include ../../partials/boilerplate %>
-
-<% xbox.forEach((xbox) => { %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Xbox One Titles</title>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+  <% xbox.forEach((xbox) => { %>
 <div class="xbox">
-  <a href="/xbox/<%=xbox.id%>"><h1><%=xbox.name%></h1></a>
+  <a href="/xbox/game/<%=xbox.id%>"><h1><%=xbox.name%></h1></a>
 </div>
+</body>
 <% }) %>
-
-<a href="xbox/new">Make A Game!</a>
+<a href="/xbox/new">Add A Game!</a>
+</html>

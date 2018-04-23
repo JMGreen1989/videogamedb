@@ -1,10 +1,9 @@
 const playDb = require('../../models/playstation');
-const fetch = require('node-fetch');
 
-
-function PSlayout(req,res,next) {
-  console.log('inside ps layout');
-    playDb.getAllPGames()
+//laying out all the PS games available on the table
+function PSlayout(req, res, next) {
+  console.log('inside ps layout')
+      playDb.getAllPGames()
     .then(data => {
       res.locals.playstation = data;
       next();
@@ -28,7 +27,7 @@ function getOne(req, res, next) {
 
 //click the add box and you can add a PS game
 function createPlayGame(req, res, next) {
-  playDb.makePGame(req.params.id)
+  playDb.makePGame(req.body)
   .then(data => {
     res.locals.playstation = data;
     next();
@@ -40,7 +39,7 @@ function createPlayGame(req, res, next) {
 
 //edit the details of a PS game you just added
 function editPlayGame(req, res, next) {
-  playDb.editPGame(req.params.id)
+  playDb.updatePGame(req.params.id)
   .then(data => {
     res.locals.playstation = data;
     next();
@@ -52,9 +51,9 @@ function editPlayGame(req, res, next) {
 
 //update an already existing PS game on the list
 function updatePlayGame(req, res, next) {
-  playDb.editPGame(req.params.id)
+  playDb.updatePGame(req.params.id)
   .then(data => {
-    res.redirect(`playstationview/edit`)
+    res.redirect('/playstation/edit')
   })
   .catch(err => {
     next(err);
@@ -65,7 +64,7 @@ function updatePlayGame(req, res, next) {
 function destroyPlayGame(req, res, next) {
   playDb.deletePGame(req.params.id)
   .then(() => {
-    res.redirect('playstationview/index');
+    res.redirect('/playstation/show');
   })
   .catch(err => {
     res.status(500).json({

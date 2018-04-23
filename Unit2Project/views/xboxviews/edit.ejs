@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Edit this game</title>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+  <form action="/xbox/<%=xbox.id%>?_method=PUT" method="POST">
+  <input type="text" name="name" value="<%=xbox.name%>" /><br>
+  <input type="text" name="release" value="<%=xbox.release%>" /><br>
+  <input type="text" name="developer" value="<%=xbox.developer%>" /><br>
+  <input type="text" name="image" value="<%=xbox.image%>" /><br>
+
+  <select name="id">
+    <% xbox.forEach((xbox) => { %>
+      <option value="<%=xbox.id%>"><%=game.name%></option>
+    <% }) %>
+  </select> <br>
+  <input type="submit" value="Edit Game" />
+</form>
+<a href="/xbox/show"> Back to Game List </a>
+</body>
+</html>

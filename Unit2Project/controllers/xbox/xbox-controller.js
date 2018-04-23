@@ -1,8 +1,9 @@
 const boxDb = require('../../models/xbox');
 // const fetch = require('node-fetch');
 
+//laying out all the xbox games availble on the given table
 function XBlayout(req,res,next) {
-  console.log('inside ps layout');
+  console.log('inside xb layout');
     boxDb.getAllXGames()
     .then(data => {
       res.locals.xbox = data;
@@ -13,7 +14,7 @@ function XBlayout(req,res,next) {
     })
 }
 
-
+//getting one xbox game
 function getOneX(req, res, next) {
   boxDb.getOneXGame(req.params.id)
   .then(data => {
@@ -25,8 +26,9 @@ function getOneX(req, res, next) {
   })
 }
 
+//adding a game, if you choose
 function createXGame(req, res, next) {
-  boxDb.makeXGame(req.params.id)
+  boxDb.makeXGame(req.body)
   .then(data => {
     res.locals.xbox = data;
     next();
@@ -37,11 +39,11 @@ function createXGame(req, res, next) {
 }
 
 
-//update an already existing PS game on the list
+//update an already existing xbox game on the list
 function updateXBGame(req, res, next) {
   boxDb.updateXGame(req.params.id)
   .then(data => {
-    res.redirect(`xboxview/edit`)
+    res.redirect('xbox/edit')
   })
   .catch(err => {
     next(err);
@@ -52,7 +54,7 @@ function updateXBGame(req, res, next) {
 function destroyXGame(req, res, next) {
   boxDb.deleteXGame(req.params.id)
   .then(() => {
-    res.redirect('xboxview/index');
+    res.redirect('/xbox/show');
   })
   .catch(err => {
     res.status(500).json({
