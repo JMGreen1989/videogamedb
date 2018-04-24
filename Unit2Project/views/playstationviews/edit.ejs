@@ -6,7 +6,9 @@
   <title>Edit this game</title>
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
+<h1></h1>
 <body>
+  <div class="input">
   <form action="/playstation/<%=playstation.id%>?_method=PUT" method="POST">
   <input name="id" type="number" value="<%=playstation.id%>" style="display:none"/>
 
@@ -14,8 +16,8 @@
   <input type="text" name="release" value="<%=playstation.release%>" /><br>
   <input type="text" name="developer" value="<%=playstation.developer%>" /><br>
   <input type="text" name="image" value="<%=playstation.image%>" /><br>
-
 <br>
+</div>
   <input type="submit" value="Edit Game" />
 </form>
 <a href="/playstation/show"> Back to Game List </a>

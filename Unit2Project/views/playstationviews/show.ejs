@@ -6,13 +6,17 @@
   <title>PS4 Titles</title>
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
+<h1>Upcoming PS4 Games </h1>
 <body>
+  <a href="/playstation/new">Add A Game!</a>
+  <br>
+  <br>
+  <br>
  <% playstation.forEach((playstation) => { %>
 <div class="playstation">
   <a href="/playstation/game/<%=playstation.id%>"><h1><%=playstation.name%></h1></a>
 </div>
 </body>
 <% }) %>
-<a href="/playstation/new">Add A Game!</a>
 </html>
 

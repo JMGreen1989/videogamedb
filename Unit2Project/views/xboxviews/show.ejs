@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Xbox One Titles</title>
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
+<h1>Upcoming Xbox One Games</h1>
 <body>
+  <a href="/xbox/new">Add A Game!</a>
+  <br>
+  <br>
+  <br>
   <% xbox.forEach((xbox) => { %>
 <div class="xbox">
   <a href="/xbox/game/<%=xbox.id%>"><h1><%=xbox.name%></h1></a>
 </div>
 </body>
 <% }) %>
-<a href="/xbox/new">Add A Game!</a>
 </html>

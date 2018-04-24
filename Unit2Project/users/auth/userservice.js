@@ -1,31 +1,34 @@
-const bcrypt   = require('bcrypt');
-const fetch    = require('node-fetch');
+//  I was going to make a user login and register page following the
+//  nodes.js lesson but I ran out of time
 
-const User     = require('../model/theuser');
+// const bcrypt   = require('bcrypt');
+// const fetch    = require('node-fetch');
 
-module.exports = {
-  async login(req, res, next) {
-    try {
-      const { username, password} = req.body
-      const user = await theuser.oneUser(username);
-      const areTheyValid = await bycrpt.compare(password, user.password_digest);
+// const User     = require('../model/theuser');
 
-      if(!areTheyValid) {
-        throw {message: 'Password is Incorrect'};
-      }
-      req.session.user = user;
-      next();
-    } catch (err) {
-      next(err);
-    }
-  },
+// module.exports = {
+//   async login(req, res, next) {
+//     try {
+//       const { username, password} = req.body
+//       const user = await theuser.oneUser(username);
+//       const areTheyValid = await bycrpt.compare(password, user.password_digest);
 
-  logout(req, res, next) {
-    req.session.destroy(err => next(err));
-  },
+//       if(!areTheyValid) {
+//         throw {message: 'Password is Incorrect'};
+//       }
+//       req.session.user = user;
+//       next();
+//     } catch (err) {
+//       next(err);
+//     }
+//   },
 
-  loginRequired: [
-  (req, res, next) => next(!req.session.user || null),
-  (err, req, res, next) => res.sendStatus(404),
-  ]
-};
+//   logout(req, res, next) {
+//     req.session.destroy(err => next(err));
+//   },
+
+//   loginRequired: [
+//   (req, res, next) => next(!req.session.user || null),
+//   (err, req, res, next) => res.sendStatus(404),
+//   ]
+// };

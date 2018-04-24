@@ -1,62 +1,66 @@
-const pgp = require('pg-promise')();
+//  I was going to make a user login and register page following the
+//  nodes.js lesson but I ran out of time
 
 
-const dbConfig = require('../../config/dbConfig');
-
-const db = pgp(dbConfig);
+// const pgp = require('pg-promise')();
 
 
-module.exports = {
-  allUsers() {
-    return db.many (`
-      SELECT *
-      FROM users
-      ORDER BY id`);
-  },
+// const dbConfig = require('../../config/dbConfig');
 
-  oneUser(username){
-    return db.one(`
-      SELECT *
-      FROM users
-      WHERE username = $1`,
-      username);
-  },
+// const db = pgp(dbConfig);
 
-  userById(id){
-    return db.one(`
-      SELECT *
-      FROM users
-      WHERE email = $1`, id);
-  },
 
-  userSave(user){
-    return db.one(`
-      INSERT INTO users (
-      username, password_digest, email, firstname, lastname, avatar)
-      VALUES ($/username/, $/password_digest/, $/email/, $/firstname/, $/lastname/, $/avatar/)
-      `, user);
-  },
+// module.exports = {
+//   allUsers() {
+//     return db.many (`
+//       SELECT *
+//       FROM users
+//       ORDER BY id`);
+//   },
 
-  userUpdate(user){
-    return db.one(`
-      UPDATE users
-      SET content = $/content/,
-      author = $/author/,
-      genre_type = $/genre_type/
-      WHERE id = $/id/
-      zip   = $/zip/
-      RETURNING *
-    `, user
-      )
-  },
+//   oneUser(username){
+//     return db.one(`
+//       SELECT *
+//       FROM users
+//       WHERE username = $1`,
+//       username);
+//   },
 
-  userDestroy(id) {
-    return db.none(`
-      DELETE
-      FROM users
-      WHERE id = $1`, id);
-  }
+//   userById(id){
+//     return db.one(`
+//       SELECT *
+//       FROM users
+//       WHERE email = $1`, id);
+//   },
 
-  };
+//   userSave(user){
+//     return db.one(`
+//       INSERT INTO users (
+//       username, password_digest, email, firstname, lastname, avatar)
+//       VALUES ($/username/, $/password_digest/, $/email/, $/firstname/, $/lastname/, $/avatar/)
+//       `, user);
+//   },
+
+//   userUpdate(user){
+//     return db.one(`
+//       UPDATE users
+//       SET content = $/content/,
+//       author = $/author/,
+//       genre_type = $/genre_type/
+//       WHERE id = $/id/
+//       zip   = $/zip/
+//       RETURNING *
+//     `, user
+//       )
+//   },
+
+//   userDestroy(id) {
+//     return db.none(`
+//       DELETE
+//       FROM users
+//       WHERE id = $1`, id);
+//   }
+
+//   };
 
 

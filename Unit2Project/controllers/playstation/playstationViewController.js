@@ -1,19 +1,23 @@
-//making a function for looking at the PS index page
+//   making a function for looking at the PS index page
 
-//was confused with my syntax at first
-//thankfully Joe Keohan (the TA) went over with me that
-//for res.render to render something you need to put the
-//path as a string and res.locals as an object within the render function
+//   was confused with my syntax at first
+//   thankfully Joe Keohan (the TA) went over with me that
 
 
-//making a function for looking the PS games
+
+//   making a function for looking the PS games
+//   renders the show.ejs page in the playstationviews folder
+
 function lookAtPGames(req, res) {
   console.log('inside looking at PS games')
    res.render('playstationviews/show', {
         playstation: res.locals.playstation
     })
 }
-//showing you a specific game when you click on it
+
+//   showing you a specific game when you click on it
+//   renders the game.ejs page
+
 function showPSGame(req, res) {
   playstation = res.locals.playstation
   res.render('playstationviews/game', {
@@ -21,14 +25,16 @@ function showPSGame(req, res) {
   })
 }
 
-//making a function for when you want to input a game
+//    renders the new.ejs for adding a new game
+
 function makeNewPGame(req, res) {
   playstation = res.locals.playstation
   res.render('playstationviews/new', {
   })
 }
 
-//function for editing an exiting game
+//   renders the edit.ejs for ending an existing or added game
+
 function editPsGame(req, res) {
   playstation = res.locals.playstation
   res.render('playstationviews/edit', {
@@ -36,7 +42,8 @@ function editPsGame(req, res) {
   })
 }
 
-//function for deleting a game
+//   redirects you back to show.ejs after you've deleted something
+
 function deleteGame(req, res) {
   res.redirect('/show');
 }

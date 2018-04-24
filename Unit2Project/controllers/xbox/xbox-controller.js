@@ -1,7 +1,11 @@
-const boxDb = require('../../models/xbox');
-// const fetch = require('node-fetch');
+//   connecting my controller file to my models file
 
-//laying out all the xbox games availble on the given table
+const boxDb = require('../../models/xbox');
+
+
+//   this connects with the function in my models
+//   and displays all my games
+
 function XBlayout(req,res,next) {
   console.log('inside xb layout');
     boxDb.getAllXGames()
@@ -14,7 +18,8 @@ function XBlayout(req,res,next) {
     })
 }
 
-//getting one xbox game
+//   also connects with my model function but gets one of the games
+
 function getOneX(req, res, next) {
   boxDb.getOneXGame(req.params.id)
   .then(data => {
@@ -26,7 +31,8 @@ function getOneX(req, res, next) {
   })
 }
 
-//adding a game, if you choose
+//  this and the corresponding model initiate the add game feature
+
 function createXGame(req, res, next) {
   boxDb.makeXGame(req.body)
   .then(data => {
@@ -37,6 +43,8 @@ function createXGame(req, res, next) {
     next(err);
   })
 }
+
+//   for editing the details of a game
 
 function editXBGame(req, res, next) {
   boxDb.updateXGame(req.params.id)
@@ -50,7 +58,8 @@ function editXBGame(req, res, next) {
 }
 
 
-//update an already existing xbox game on the list
+//  after you edit, this should update the game info on screen
+
 function updateXBGame(req, res, next) {
   boxDb.updateXGame(req.body)
   .then(data => {
@@ -61,7 +70,8 @@ function updateXBGame(req, res, next) {
   })
 }
 
-//get rid of a game if you don't like it!
+//  getting rid of a game
+
 function destroyXGame(req, res, next) {
   boxDb.deleteXGame(req.params.id)
   .then(() => {

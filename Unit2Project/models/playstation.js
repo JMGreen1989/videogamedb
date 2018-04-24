@@ -1,4 +1,9 @@
+//   I went over the harry potter CRUD solution for syntax help
+
+//   connecting my models to my connection file
 const db = require ('../config/connection');
+
+//   selecting all my playstation games from the playstation table
 
 function getAllPGames() {
   return db.many(`
@@ -6,6 +11,7 @@ function getAllPGames() {
   `);
 }
 
+//   getting one game from the table
 
 function getOnePGame(id) {
   return db.one(`
@@ -14,6 +20,8 @@ function getOnePGame(id) {
 
 }
 
+//   making a game and adding it to the table
+
 function makePGame(playstation){
     return db.one (`
     INSERT INTO playstation
@@ -21,6 +29,8 @@ function makePGame(playstation){
     VALUES ($/name/, $/release/, $/developer/, $/image/)
     RETURNING *`, playstation);
 }
+
+//   updating already exisiting or added game data to
 
 function updatePGame(id) {
     return db.one (`
@@ -31,6 +41,7 @@ function updatePGame(id) {
     RETURNING *`, playstation);
 
 }
+//   deleting a game from the table
 
 function deletePGame(id){
     return db.none (`

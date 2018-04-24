@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
   <div class="playstation">
-  <h1><%=playstation.name%><%=playstation.developer%></h1>
+  <h1><%=playstation.name%></h1>
+  <h2><%=playstation.developer%></h2>
+  <h3><%=playstation.release%></h3>
   <img src="<%=playstation.image%>" alt="<%=playstation.name%>" />
   <br>
+  <div class="buttons">
    <form action="/playstation/<%=playstation.id%>/edit" class='put' method="GET">
   <input type="submit" class="editlink" value="Edit">
   </form>
@@ -19,6 +19,10 @@
   <input type="submit" class="dellink" value="Delete">
   </form>
 </div>
+</div>
 </body>
+<br>
+<br>
+<br>
 <a href="/playstation/show">Back to Games</a>
 </html>

@@ -26,7 +26,7 @@ app.set('secretServer', process.env.SECRET_SERVER);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use('/auth', userRouter);
+// app.use('/auth', userRouter);
 
 app.use(logger('dev'));
 

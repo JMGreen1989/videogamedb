@@ -1,6 +1,9 @@
-const playDb = require('../../models/playstation');
+//   connecting my controller file to my models file
+const playDb    = require('../../models/playstation');
 
-//laying out all the PS games available on the table
+//   this connects with the function in my models
+//   and displays all my games
+
 function PSlayout(req, res, next) {
   console.log(res)
       playDb.getAllPGames()
@@ -13,7 +16,8 @@ function PSlayout(req, res, next) {
     })
 }
 
-//get the PS games to show details when you click on it
+//   also connects with my model function but gets one of the games
+
 function getOne(req, res, next) {
   playDb.getOnePGame(req.params.id)
   .then(data => {
@@ -25,7 +29,8 @@ function getOne(req, res, next) {
   })
 }
 
-//click the add box and you can add a PS game
+//  this and the corresponding model initiate the add game feature
+
 function createPlayGame(req, res, next) {
   playDb.makePGame(req.body)
   .then(data => {
@@ -37,7 +42,8 @@ function createPlayGame(req, res, next) {
   })
 }
 
-//edit the details of a PS game you just added
+//   for editing the details of a game
+
 function editPlayGame(req, res, next) {
   playDb.updatePGame(req.params.id)
   .then(data => {
@@ -49,7 +55,8 @@ function editPlayGame(req, res, next) {
   })
 }
 
-//update an already existing PS game on the list
+//  after you edit, this should update the game info on screen
+
 function updatePlayGame(req, res, next) {
   playDb.updatePGame(req.body)
   .then(data => {
@@ -60,7 +67,8 @@ function updatePlayGame(req, res, next) {
   })
 }
 
-//get rid of a game if you don't like it!
+//  getting rid of a game
+
 function destroyPlayGame(req, res, next) {
   playDb.deletePGame(req.params.id)
   .then(() => {
