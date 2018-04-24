@@ -35,7 +35,7 @@ A page where the user picks which platform they want to look at, Playstation or 
 ## MVP
 - Release dates of games from both platforms 
 - Xbox and PS game pages
-- Add/delete game
+- Add, delete and edit a game
 
 ## POST MVP
 - User log in
