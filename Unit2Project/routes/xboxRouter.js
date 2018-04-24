@@ -36,6 +36,7 @@ xboxRouter.route('/:id')
 
 //editing an existing game
 xboxRouter.route('/:id/edit')
-.get(xboxController.getOneX, xboxController.editXBGame, sendThisError);
+.get(xboxController.getOneX, xboxViewController.updateTheXGame, sendThisError);
+
 
 module.exports = xboxRouter;

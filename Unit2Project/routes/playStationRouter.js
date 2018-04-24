@@ -32,12 +32,14 @@ playRouter.route('/new')
 
 playRouter.route('/:id')
 .delete(playController.destroyPlayGame, playViewController.deleteGame, sendThisError)
-.get(playController.PSlayout, playViewController.lookAtPGames, sendThisError)
-.put(playController.updatePlayGame, playViewController.editPsGame, sendThisError);
+.put(playController.updatePlayGame)
+.get(playController.PSlayout, playViewController.lookAtPGames, sendThisError);
+
 
 //editing an existing game
 playRouter.route('/:id/edit')
-.get(playController.getOne, playViewController.editPsGame, sendThisError);
+.get(playController.getOne, playViewController.editPsGame, sendThisError)
+.put(playController.updatePlayGame);
 
 
 
