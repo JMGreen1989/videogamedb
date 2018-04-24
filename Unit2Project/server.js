@@ -5,6 +5,7 @@ const logger  = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const methodOverride = require('method-override');
+const faker = require('faker');
 const app = express();
 
 const userService = require ('./users/auth/userservice');

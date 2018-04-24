@@ -3,7 +3,6 @@ const db = require ('../config/connection');
 function getAllXGames() {
   return db.many (`
     SELECT * FROM xbox`);
-
 }
 
 
@@ -23,7 +22,7 @@ function makeXGame(xbox){
 
 }
 
-function updateXGame(xbox) {
+function updateXGame(id) {
     return db.one (`
     UPDATE xbox
     SET name = $/name/, release = $/release/,

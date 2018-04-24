@@ -8,16 +8,14 @@
 </head>
 <body>
   <form action="/xbox/<%=xbox.id%>?_method=PUT" method="POST">
+  <input name="id" type="number" value="<%=xbox.id%>" style="display:none"/>
+
   <input type="text" name="name" value="<%=xbox.name%>" /><br>
   <input type="text" name="release" value="<%=xbox.release%>" /><br>
   <input type="text" name="developer" value="<%=xbox.developer%>" /><br>
   <input type="text" name="image" value="<%=xbox.image%>" /><br>
 
-  <select name="id">
-    <% xbox.forEach((xbox) => { %>
-      <option value="<%=xbox.id%>"><%=game.name%></option>
-    <% }) %>
-  </select> <br>
+<br>
   <input type="submit" value="Edit Game" />
 </form>
 <a href="/xbox/show"> Back to Game List </a>

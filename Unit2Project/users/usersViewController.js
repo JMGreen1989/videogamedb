@@ -1,7 +1,7 @@
 module.exports = {
 
 userLogin(req, res) {
-  res.render('viewauth/userlogin');
+  res.redirect('/home/index');
 
 },
 

@@ -9,7 +9,7 @@ const xboxViewController = require('../controllers/xbox/xboxViewController');
 //setting up an error for when something goes wrong
 function sendThisError(err, req, res, next) {
   res.status(500).json({
-    status: 'an error has occured',
+    status: 'an error has occurred',
     message: err.message
   })
 }
@@ -28,13 +28,14 @@ xboxRouter.route('/game/:id')
 xboxRouter.route('/new')
 .get(xboxViewController.makeNewXGame, sendThisError);
 
-//editing an existing game
-xboxRouter.route('/edit/:id')
-.post(xboxController.updateXBGame, xboxViewController.updateTheXGame, sendThisError);
 
 //delete a game
 xboxRouter.route('/:id')
 .delete(xboxController.destroyXGame, xboxViewController.deleteXGame, sendThisError)
 .get(xboxController.XBlayout, xboxViewController.lookAtXGames, sendThisError);
+
+//editing an existing game
+xboxRouter.route('/:id/edit')
+.get(xboxController.getOneX, xboxController.editXBGame, sendThisError);
 
 module.exports = xboxRouter;

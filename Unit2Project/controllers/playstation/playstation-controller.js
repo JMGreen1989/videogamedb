@@ -51,9 +51,9 @@ function editPlayGame(req, res, next) {
 
 //update an already existing PS game on the list
 function updatePlayGame(req, res, next) {
-  playDb.updatePGame(req.params.id)
+  playDb.updatePGame(req.body)
   .then(data => {
-    res.redirect('/playstation/edit')
+    res.redirect(`/playstation/${req.body.id}`)
   })
   .catch(err => {
     next(err);

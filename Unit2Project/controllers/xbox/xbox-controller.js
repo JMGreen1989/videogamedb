@@ -38,12 +38,23 @@ function createXGame(req, res, next) {
   })
 }
 
+function editXBGame(req, res, next) {
+  boxDb.updateXGame(req.params.id)
+  .then(data => {
+    res.locals.xbox = data;
+    next();
+  })
+  .catch(err => {
+    next(err);
+  })
+}
+
 
 //update an already existing xbox game on the list
 function updateXBGame(req, res, next) {
-  boxDb.updateXGame(req.params.id)
+  boxDb.updateXGame(req.body)
   .then(data => {
-    res.redirect('xbox/edit')
+    res.redirect(`/xbox/${req.body.id}`)
   })
   .catch(err => {
     next(err);
@@ -54,7 +65,7 @@ function updateXBGame(req, res, next) {
 function destroyXGame(req, res, next) {
   boxDb.deleteXGame(req.params.id)
   .then(() => {
-    res.redirect('/xbox/show');
+  res.redirect('/xbox/show');
   })
   .catch(err => {
     res.status(500).json({
@@ -67,6 +78,7 @@ module.exports = {
   XBlayout,
   getOneX,
   createXGame,
+  editXBGame,
   updateXBGame,
   destroyXGame
 }
