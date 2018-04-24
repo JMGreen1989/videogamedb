@@ -10,7 +10,8 @@ Day 4: Fri	Working Prototype
 Day 5: Sat	Final Working Project
 Day 6: Sun	Bugs / Stylying / PostMVP
 Day 7: Mon	Project Presentations
-Project Description
+
+## Project Description
 Video Game Release Date Schedule
 
 This app will pull data from a game api, where it's narrowed down to 2018 release dates for both Xbox and Playstation platforms. You can look to see which games are coming out, and add a game or two if you think it's missing one.
@@ -60,12 +61,18 @@ winLogic	This decides if you've got enough points to win, or if you answered too
 Additional Libraries
 Use this section to list all supporting libraries and thier role in the project.
 
-Code Snippet
-Change Log
-Issues and Resolutions
+## Code Snippet
+http://res.cloudinary.com/dc6dj6gen/image/upload/v1524573935/Screen_Shot_2018-04-24_at_8.45.00_AM.png
+
+##Change Log
+Along the way I had to change my goals. Originally I wanted the ability to comment on games, game data from an API, and user log in. However I never got to those because I ran out of time, and the API never ended up working. I was able to pull data from one I found but all the data was mismatched and would have made my project extremely confusing. I didn't want to start from scratch.
+
+## Issues and Resolutions
+all located in my project board
 SAMPLE.....
-ERROR:
-RESOLUTION:
+ERROR: "message": "connect ECONNREFUSED 127.0.0.1:5432"
+
+RESOLUTION: had to reinstall postgres. no idea how but it get deleted somewhere along the way. This error held me up ALL. DAY. SUNDAY.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
